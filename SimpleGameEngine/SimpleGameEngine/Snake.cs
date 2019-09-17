@@ -24,6 +24,9 @@ public class Snake{
             Initialize the x, y and speed fields 
             using the values passed to the constructor
         */
+        this.x = x;
+        this.y = y;
+        this.speed = speed;
 
         
         /*  Adds a segment to the segments List
@@ -86,6 +89,9 @@ public class Snake{
             3. use the segments.Add method to add the newSegment to the back of
             the segments List.
         */
+        SnakeSegment lastSegment = segments[segments.Count-1];
+        SnakeSegment newSegment = new SnakeSegment(lastSegment.PrevX, lastSegment.PrevY, 'o');
+        segments.Add(newSegment);
     }
 
     public void UpdateSegments(){
